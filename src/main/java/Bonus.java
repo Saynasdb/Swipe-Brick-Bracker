@@ -9,51 +9,11 @@ public
 class Bonus extends Thing {
     int dy = 2;
     int type;
-//    1 fireball
-//    2 multi ball
-//    3 long paddle
-//    4 short paddle
-//    5 fast ball
-//    6 slow ball
-//    7 crazy paddle
-//    8 random
+
 
     public Bonus(int type) {
         this.type = type;
-        switch (type) {
-            case 1:
-                this.image = new ImageIcon("src/main/resources/bonus_fireball.png").getImage();
-                getDimensions();
-                break;
-            case 2:
-                this.image = new ImageIcon("src/main/resources/bonus_multiball.png").getImage();
-                getDimensions();
-                break;
-            case 3:
-                this.image = new ImageIcon("src/main/resources/bonus_longpaddle.png").getImage();
-                getDimensions();
-                break;
-            case 4:
-                this.image = new ImageIcon("src/main/resources/bonus_shortpaddle.png").getImage();
-                getDimensions();
-                break;
-            case 5:
-                this.image = new ImageIcon("src/main/resources/bonus_fastball.png").getImage();
-                getDimensions();
-                break;
-            case 6:
-                this.image = new ImageIcon("src/main/resources/bonus_slowball.png").getImage();
-                getDimensions();
-                break;
-            case 7:
-                this.image = new ImageIcon("src/main/resources/bonus_crazypaddle.png").getImage();
-                getDimensions();
-                break;
-            case 8:
-                this.image = new ImageIcon("src/main/resources/bonus_random.png").getImage();
-                getDimensions();
-                break;
-        }
+
     }
 
     void move() {
@@ -64,7 +24,6 @@ class Bonus extends Thing {
 
     public void act(PlayPanel playPanel, boolean random) {
         Timer tempTimer = null;
-        Paddle paddle = playPanel.paddle;
         LinkedList<Ball> balls = playPanel.balls;
 
         int cases = this.getType();

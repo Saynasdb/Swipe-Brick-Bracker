@@ -69,10 +69,7 @@ class DataManager {
                 writer.write(ball.toString());
                 writer.newLine();
             }
-            writer.write("paddle");
-            writer.newLine();
-            writer.write(playPanel.paddle.toString());
-            writer.newLine();
+
             writer.write("bricks");
             writer.newLine();
             for (Brick brick : playPanel.bricks) {
@@ -108,7 +105,6 @@ class DataManager {
         boolean activeBonusMode = false;
         boolean floatingBonusMode = false;
         boolean ballsMode = false;
-        boolean paddleMode = false;
         boolean bricksMode = false;
 
         try (BufferedReader reader = Files.newBufferedReader(path, Charset.forName("UTF-8"))) {
@@ -142,14 +138,8 @@ class DataManager {
                     continue;
 
                 }
-                if (line.equals("paddle")) {
-                    ballsMode = false;
-                    paddleMode = true;
-                    continue;
 
-                }
                 if (line.equals("bricks")) {
-                    paddleMode = false;
                     bricksMode = true;
                     continue;
                 }
@@ -183,15 +173,7 @@ class DataManager {
                     playPanel.balls.add(tempBall);
                     continue;
                 }
-                if (paddleMode) {
-                    Paddle tempPaddle;
-                    tempPaddle = new Paddle();
 
-                    tempPaddle.setX(Integer.parseInt(dataString[0]));
-                    tempPaddle.setY(Integer.parseInt(dataString[1]));
-                    playPanel.paddle = tempPaddle;
-                    continue;
-                }
 
                 if (bricksMode) {
                     Brick tempBrick;

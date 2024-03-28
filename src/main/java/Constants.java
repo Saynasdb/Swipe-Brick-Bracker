@@ -5,8 +5,7 @@ public
  interface Constants {
     int WIDTH=610;
     int HEIGHT=700;
-    int DEFAULT_PADDLE_X=190;
-    int DEFAULT_PADDLE_Y=650;
+
     int DEFAULT_BALL_X=190;
     int DEFAULT_BALL_Y=650;
     Image HEART=new ImageIcon("src/main/resources/heart.png").getImage();

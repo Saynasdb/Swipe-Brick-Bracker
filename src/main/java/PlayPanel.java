@@ -19,7 +19,6 @@ class PlayPanel extends JPanel implements MouseMotionListener {
     float shakingRatio = 1;
 
     int blood = 3;
-    Paddle paddle;
     LinkedList<Brick> bricks;
     LinkedList<Bonus> floatingBonuses;
     boolean shake = false;
@@ -83,7 +82,6 @@ class PlayPanel extends JPanel implements MouseMotionListener {
                 }
             }
         });
-        addKeyListener(new Adapter());
         setFocusable(true);
         setPreferredSize(new Dimension(Constants.WIDTH, Constants.HEIGHT));
         this.setBackground(new Color(0xFFEBEB));
@@ -604,18 +602,6 @@ this.aimingEnabled=aimingEnabled;
     }
 
 
-    private
-    class Adapter extends KeyAdapter {
-        @Override
-        public void keyPressed(KeyEvent e) {
-            paddle.keyPressed(e);
-        }
-
-        @Override
-        public void keyReleased(KeyEvent e) {
-            paddle.keyReleased(e);
-        }
-    }
 
     private
     class PlayProcess implements ActionListener {
